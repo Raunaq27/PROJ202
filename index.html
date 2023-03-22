@@ -42,6 +42,20 @@
                     ['Bridge of Sacrifice', 947],
                     ["Impaler's Catacombs", 908],
                     // limgrave
+                    ['Agheel Lake South', 1180],
+                    ['Seaside Ruin', 1182],
+                    ['Church of Dragon Communion', 1126],
+                    ['Fort Haight West', 1309],
+                    ['Waypoint Ruins Cellar', 1366],
+                    ['Cave of Knowledge', 1297],
+                    ['Stranded Graveyard', 1273],
+                    ['The First Step', 1300],
+                    ['Coastal Cave', 1310],
+                    ['', 1402],
+                    ['', 1513],
+                    ['', 1583],
+                    ['', 1588],
+                    ['', 0],
 
                 ]
 
@@ -69,6 +83,21 @@
                     [0, 2627],
                     [0, 2726],
                     // limgrave
+                    [0, 2518],
+                    [0, 2336],
+                    [0, 1910],
+                    [0, 2839],
+                    [0, 2559],
+                    [0, 2197],
+                    [0, 2175],
+                    [0, 2141],
+                    [0, 1990],
+                    [0, 2119],
+                    [0, 2254],
+                    [0, 2286],
+                    [0, 2407],
+                    [0, 0],
+
 
                 ]
             }
@@ -104,7 +133,7 @@
 
             for (var i = 0; i < data.y.data.length; i++) {
                 center = [data.y.data[i][1], data.x.data[i][1]];
-                L.marker(center, { icon: greenIcon }).addTo(map).bindPopup("Lat: " + data.y.data[i][0] + "<br/>Lon: " + data.x.data[i][1]);//.openPopup();;
+                L.marker(center, { icon: greenIcon }).addTo(map).bindPopup("Lat: " + data.y.data[i][1] + "<br/>Lon: " + data.x.data[i][1]);//.openPopup();;
 
             }
 
