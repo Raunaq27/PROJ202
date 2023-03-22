@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head runat="server">
+    <title></title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div id="mapid">
+        </div>
+    </form>
+    <script>
+        // Simulating data for the map to test the codes
+        var data = {
+            // lat.data[i][1] as latitude
+            lat: {
+                data: [
+                    [0, 51.509],
+                    [0, 51.503],
+                    [0, 51.51]
+                ]
+            },
+            // lng.data[i][1] as longtitude
+            lng: {
+                data: [
+                    [0, -0.08],
+                    [0, -0.06],
+                    [0, -0.047]
+                ]
+            }
+        };
+
+
+        bindMap(data);
+
+
+        function bindMap(data) {
+
+            // var greenIcon = L.icon({
+            //     iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+            //     //shadowUrl:  'images/marker-icon.png',
+
+            //     iconSize: [20, 30], // size of the icon
+            //     shadowSize: [50, 64], // size of the shadow
+            //     iconAnchor: [8, 29], // point of the icon which will correspond to marker's location
+            //     shadowAnchor: [4, 62],  // the same for the shadow
+            //     popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+            // });
+
+            //var element = chart.selector.replace('#', '');
+            var map = L.map('mapid', {
+                crs: L.CRS.Simple
+            });
+
+            var bounds = [[0, 0], [1000, 1000]];
+            var image = L.imageOverlay('./assets/map.jpeg', bounds).addTo(map);
+            var center = [29.608088, 52.530853];//[51.505, -0.09];
+
+            map.fitBounds(bounds);
+
+            // map.setView(center, 3);
+
+            // for (var i = 0; i < data.lat.data.length; i++) {
+            //     center = [data.lat.data[i][1], data.lng.data[i][1]];
+            //     L.marker(center, { icon: greenIcon }).addTo(map).bindPopup("Lat: " + data.lat.data[i][1] + "<br/>Lon: " + data.lng.data[i][1]);//.openPopup();;
+
+            // }
+
+            // setInterval(() => {
+            //     map.invalidateSize();
+            // }, 500);
+
+        }
+    </script>
+</body>
+
+</html>
